@@ -9,6 +9,16 @@
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
         tools:context=".MainActivity" >
+
+    <TextView
+            android:id="@+id/dice_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textSize="32sp"
+            android:textColor="#790e8b"
+            android:text="Dice Random"
+    />
     
     <ImageView
             android:id="@+id/dice_image"
@@ -22,12 +32,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textColor="#790e8b"
+            android:background="#df78ef"
             android:text="@string/roll"/>
     <Button
             android:id="@+id/reset_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textColor="#b4004e"
+            style="?android:attr/borderlessButtonStyle"
             android:text="@string/reset"/>
 
 </LinearLayout>
