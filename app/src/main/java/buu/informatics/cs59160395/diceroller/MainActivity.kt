@@ -17,8 +17,19 @@ class MainActivity : AppCompatActivity() {
         val rollBottun: Button = findViewById(R.id.roll_button)
         rollBottun.setOnClickListener { rollDicr() }
 
+        val resetBottun: Button = findViewById(R.id.reset_button)
+        resetBottun.setOnClickListener { resetText() }
+
         val resultText: TextView = findViewById(R.id.result_text)
         resultText.text = "Dice Roll"
+    }
+
+    private fun resetText(){
+        val resetInt = 0
+        val resultText: TextView = findViewById(R.id.result_text)
+        resultText.text = resetInt.toString()
+
+        Toast.makeText(this, "button reset", Toast.LENGTH_SHORT).show()
     }
 
     private fun rollDicr(){
@@ -26,6 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         val resultText: TextView = findViewById(R.id.result_text)
         resultText.text = randomInt.toString()
+
         Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
     }
 }
