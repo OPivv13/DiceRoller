@@ -3,6 +3,7 @@ package buu.informatics.cs59160395.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
@@ -18,26 +19,26 @@ class MainActivity : AppCompatActivity() {
         rollBottun.setOnClickListener { rollDicr() }
 
         val resetBottun: Button = findViewById(R.id.reset_button)
-        resetBottun.setOnClickListener { resetText() }
+        resetBottun.setOnClickListener { resetDice() }
 
-        val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = "Dice Roll"
+
     }
 
-    private fun resetText(){
-        val resetInt = 0
-        val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = resetInt.toString()
-
-        Toast.makeText(this, "button reset", Toast.LENGTH_SHORT).show()
+    private fun resetDice(){
     }
 
     private fun rollDicr(){
         val randomInt = Random().nextInt(6) + 1
+        val diceImage: ImageView = findViewById(R.id.dice_image)
+        val drawableResoucre = when(randomInt){
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
 
-        val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = randomInt.toString()
-
-        Toast.makeText(this, "button clicked", Toast.LENGTH_SHORT).show()
+        diceImage.setImageResource(drawableResoucre)
     }
 }
